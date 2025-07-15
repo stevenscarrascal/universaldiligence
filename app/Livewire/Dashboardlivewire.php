@@ -35,7 +35,6 @@ class Dashboardlivewire extends Component
     public function getHasAccessProperty()
     {
         $user = Auth::user();
-
         // return $user && $user->plan_id && $user->plan_expires_at && now()->lessThan($user->plan_expires_at);
         return $user;
     }

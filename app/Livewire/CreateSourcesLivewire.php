@@ -111,7 +111,7 @@ class CreateSourcesLivewire extends Component implements Forms\Contracts\HasForm
                     Grid::make(1)
                     ->schema([
                         TextInput::make('description')
-                        ->label('Area')
+                        ->label('Descripción de la fuente')
                         ->required()
                     ])
                 ]),

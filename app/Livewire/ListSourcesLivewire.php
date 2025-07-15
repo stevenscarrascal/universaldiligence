@@ -56,6 +56,11 @@ class ListSourcesLivewire extends Component implements HasForms, HasTable
                     ->icon(fn($state): string => match ($state) {
                         1 => 'heroicon-o-check',
                         0 => 'heroicon-o-x-circle'
+                    })
+                    ->color(fn ($state): string => match ($state) {
+                        1 => 'success',
+                        0 => 'danger',
+                        default => 'gray',
                     }),
                     TextColumn::make('url')->label('URL.')
                     ->formatStateUsing(fn ($record) => "Link fuente")

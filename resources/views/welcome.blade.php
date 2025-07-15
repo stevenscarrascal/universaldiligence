@@ -60,7 +60,7 @@
                 <livewire:dashboardlivewire />
              </main>
              <footer class="py-16 text-center text-sm text-black">
-                Universal Diligence
+                Universal Diligence 2025. Todos los derechos reservados.
             </footer>
         </div>
 

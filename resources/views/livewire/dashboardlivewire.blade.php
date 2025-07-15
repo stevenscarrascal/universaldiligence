@@ -37,14 +37,14 @@
                             <td class="p-2 border">{{ $source->category }}</td>
                             <td class="p-2 border">{{ $source->type_risk }}</td>
                             <td class="p-2 border">
-                                @if ($hasAccess)
+                                @if ($hasAccess || !$source->is_premium)
                                     <a href="{{ $source->url }}" target="_blank" class="text-blue-600 underline">Ver enlace</a>
                                 @else
                                     <span>🔒 Solo suscriptores</span>
                                 @endif
                             </td>
                             <td class="p-2 border">
-                                @if ($hasAccess)
+                                @if ($hasAccess || !$source->is_premium)
                                     <a href="{{ $source->video_url }}" target="_blank" class="text-blue-600 underline">Ver video</a>
                                 @else
                                     <span>🔒 Solo suscriptores</span>

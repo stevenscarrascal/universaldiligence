@@ -51,6 +51,7 @@ class ListSourcesLivewire extends Component implements HasForms, HasTable
                     TextColumn::make('type_info')->label('Tipo de información.')->sortable()->searchable()->toggleable(),
                     TextColumn::make('type_risk')->label('Tipo de riesgo.')->sortable()->searchable()->toggleable(),
                     TextColumn::make('description')->label('Descripción.')->sortable()->searchable()->toggleable(isToggledHiddenByDefault: true),
+                    TextColumn::make('is_premium')->label('Premium')->sortable()->searchable()->toggleable(isToggledHiddenByDefault: true),
                     TextColumn::make('url')->label('URL.')
                     ->formatStateUsing(fn ($record) => "Link fuente")
                     ->url(fn ($record) => $record->url)
@@ -58,7 +59,7 @@ class ListSourcesLivewire extends Component implements HasForms, HasTable
                     TextColumn::make('vide_url')->label('Link video.')->formatStateUsing(fn ($record) => "Link video")
                     ->url(fn ($record) => $record->url)
                     ->openUrlInNewTab()->sortable()->searchable()->toggleable(),
-                    // TextColumn::make('status')->label('Estado.')->sortable()->searchable()->toggleable(),
+                    TextColumn::make('status')->label('Estado')->sortable()->searchable()->toggleable(isToggledHiddenByDefault: true),
 
                 ]
             )

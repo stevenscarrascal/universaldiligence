@@ -31,27 +31,30 @@
                 </thead>
                 <tbody>
                     @foreach ($sources as $source)
-                        <tr class="odd:bg-white even:bg-gray-50">
-                            <td class="p-2 border">{{ $source->name }}</td>
-                            <td class="p-2 border">{{ $source->type_info }}</td>
-                            <td class="p-2 border">{{ $source->category }}</td>
-                            <td class="p-2 border">{{ $source->type_risk }}</td>
-                            <td class="p-2 border">
-                                @if ($hasAccess || !$source->is_premium)
-                                    <a href="{{ $source->url }}" target="_blank" class="text-blue-600 underline">Ver enlace</a>
-                                @else
-                                    <span>🔒 Solo suscriptores</span>
-                                @endif
-                            </td>
-                            <td class="p-2 border">
-                                @if ($hasAccess || !$source->is_premium)
-                                    <a href="{{ $source->video_url }}" target="_blank" class="text-blue-600 underline">Ver video</a>
-                                @else
-                                    <span>🔒 Solo suscriptores</span>
-                                @endif
-                            </td>
-                            <td class="p-2 border">{{ $source->description }}</td>
-                        </tr>
+                        @if ($source->status)
+                            <tr class="odd:bg-white even:bg-gray-50">
+                                <td class="p-2 border">{{ $source->name }}</td>
+                                <td class="p-2 border">{{ $source->type_info }}</td>
+                                <td class="p-2 border">{{ $source->category }}</td>
+                                <td class="p-2 border">{{ $source->type_risk }}</td>
+                                <td class="p-2 border">
+                                    @if ($hasAccess || !$source->is_premium)
+                                        <a href="{{ $source->url }}" target="_blank" class="text-blue-600 underline">Ver enlace</a>
+                                    @else
+                                        <span>🔒 Solo suscriptores</span>
+                                    @endif
+                                </td>
+                                <td class="p-2 border">
+                                    @if ($hasAccess || !$source->is_premium)
+                                        <a href="{{ $source->video_url }}" target="_blank" class="text-blue-600 underline">Ver video</a>
+                                    @else
+                                        <span>🔒 Solo suscriptores</span>
+                                    @endif
+                                </td>
+                                <td class="p-2 border">{{ $source->description }}</td>
+                            </tr>
+                        @endif
+                        
                     @endforeach
                 </tbody>
             </table>

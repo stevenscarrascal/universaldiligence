@@ -2,9 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Filament\Tables\Columns\Summarizers\Count;
 use Illuminate\Database\Seeder;
+use Database\Seeders\Roleseeder;
+use Database\Seeders\Countriesseeder;
+use Database\Seeders\Userseeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,11 +15,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        $this->call(Roleseeder::class);
+        $this->call(Countriesseeder::class);
+        $this->call(Userseeder::class);
     }
 }

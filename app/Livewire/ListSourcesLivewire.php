@@ -46,11 +46,6 @@ class ListSourcesLivewire extends Component implements HasForms, HasTable
             ->columns(
                 [
                     TextColumn::make('id')->label('No.')->sortable()->searchable()->toggleable(),
-                    TextColumn::make('name')->label('nombre de fuente.')->sortable()->searchable()->toggleable(),
-                    TextColumn::make('category')->label('Categoria.')->sortable()->searchable()->toggleable(),
-                    TextColumn::make('type_info')->label('Tipo de información.')->sortable()->searchable()->toggleable(),
-                    TextColumn::make('type_risk')->label('Tipo de riesgo.')->sortable()->searchable()->toggleable(),
-                    TextColumn::make('description')->label('Descripción.')->sortable()->searchable()->toggleable(isToggledHiddenByDefault: true),
                     IconColumn::make('is_premium')
                     ->label('Premium')
                     ->icon(fn($state): string => match ($state) {
@@ -62,6 +57,11 @@ class ListSourcesLivewire extends Component implements HasForms, HasTable
                         0 => 'danger',
                         default => 'gray',
                     }),
+                    TextColumn::make('name')->label('nombre de fuente.')->sortable()->searchable()->toggleable(),
+                    TextColumn::make('category')->label('Categoria.')->sortable()->searchable()->toggleable(),
+                    TextColumn::make('type_info')->label('Tipo de información.')->sortable()->searchable()->toggleable(),
+                    TextColumn::make('type_risk')->label('Tipo de riesgo.')->sortable()->searchable()->toggleable(),
+                    TextColumn::make('description')->label('Descripción.')->sortable()->searchable()->toggleable(isToggledHiddenByDefault: true),
                     TextColumn::make('url')->label('URL.')
                     ->formatStateUsing(fn ($record) => "Link fuente")
                     ->url(fn ($record) => $record->url)

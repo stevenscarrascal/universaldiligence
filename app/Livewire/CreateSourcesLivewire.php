@@ -60,13 +60,20 @@ class CreateSourcesLivewire extends Component implements Forms\Contracts\HasForm
                         ->required(),
                         TextInput::make('category')
                         ->label('Categoria')
-                        ->required(),
+                        ->required()
+                        ->datalist([
+                            "Legal",
+                            "Financiera",
+                            "General",
+                            "Listas",
+                            "Judicial",
+                            "Identificación"
+                        ]),
                         TextInput::make('type_info')
                         ->label('Tipo de información')
                         ->required(),
                         TextInput::make('type_risk')
-                        ->label('Tipo de riesgo')
-                        ->required(),
+                        ->label('Tipo de riesgo'),
                     ]),
 
 
